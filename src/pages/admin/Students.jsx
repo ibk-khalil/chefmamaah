@@ -116,45 +116,76 @@ export default function Students() {
         </Button>
       </div>
 
-      <div className="mt-8 bg-white rounded-lg border border-cream-light overflow-x-auto">
+      <div className="mt-8">
         {loading ? (
-          <p className="p-6 text-sm text-grey-medium">Loading...</p>
+          <p className="p-6 text-sm text-grey-medium bg-white rounded-lg border border-cream-light">Loading...</p>
         ) : error ? (
-          <p className="p-6 text-sm text-red-600">{error}</p>
+          <p className="p-6 text-sm text-red-600 bg-white rounded-lg border border-cream-light">{error}</p>
         ) : students.length === 0 ? (
-          <p className="p-6 text-sm text-grey-medium">No students have been added yet.</p>
+          <p className="p-6 text-sm text-grey-medium bg-white rounded-lg border border-cream-light">No students have been added yet.</p>
         ) : (
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="text-left text-grey-medium border-b border-cream-light">
-                <th className="px-6 py-3 font-medium">Name</th>
-                <th className="px-6 py-3 font-medium">Email</th>
-                <th className="px-6 py-3 font-medium">Batch</th>
-                <th className="px-6 py-3 font-medium">Status</th>
-                <th className="px-6 py-3"></th>
-              </tr>
-            </thead>
-            <tbody>
+          <>
+            {/* Desktop table */}
+            <div className="hidden md:block bg-white rounded-lg border border-cream-light overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="text-left text-grey-medium border-b border-cream-light">
+                    <th className="px-6 py-3 font-medium">Name</th>
+                    <th className="px-6 py-3 font-medium">Email</th>
+                    <th className="px-6 py-3 font-medium">Batch</th>
+                    <th className="px-6 py-3 font-medium">Status</th>
+                    <th className="px-6 py-3"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {students.map((s) => (
+                    <tr key={s.id} className="border-b border-cream-light last:border-0">
+                      <td className="px-6 py-4 font-medium">{s.full_name}</td>
+                      <td className="px-6 py-4 text-grey-medium">{s.email}</td>
+                      <td className="px-6 py-4">{s.batch?.name || '—'}</td>
+                      <td className="px-6 py-4 capitalize">{s.status}</td>
+                      <td className="px-6 py-4">
+                        <div className="flex items-center gap-3 justify-end">
+                          <button onClick={() => openEdit(s)} className="focus-ring text-grey-medium hover:text-charcoal-deep">
+                            <Pencil size={16} />
+                          </button>
+                          <button onClick={() => handleDelete(s)} className="focus-ring text-grey-medium hover:text-red-600">
+                            <Trash2 size={16} />
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            {/* Mobile stacked cards — no horizontal scrolling */}
+            <div className="md:hidden space-y-3">
               {students.map((s) => (
-                <tr key={s.id} className="border-b border-cream-light last:border-0">
-                  <td className="px-6 py-4 font-medium">{s.full_name}</td>
-                  <td className="px-6 py-4 text-grey-medium">{s.email}</td>
-                  <td className="px-6 py-4">{s.batch?.name || '—'}</td>
-                  <td className="px-6 py-4 capitalize">{s.status}</td>
-                  <td className="px-6 py-4">
-                    <div className="flex items-center gap-3 justify-end">
-                      <button onClick={() => openEdit(s)} className="focus-ring text-grey-medium hover:text-charcoal-deep">
-                        <Pencil size={16} />
-                      </button>
-                      <button onClick={() => handleDelete(s)} className="focus-ring text-grey-medium hover:text-red-600">
-                        <Trash2 size={16} />
-                      </button>
+                <div key={s.id} className="bg-white rounded-lg border border-cream-light p-4">
+                  <div className="flex items-start justify-between gap-3">
+                    <div className="min-w-0">
+                      <p className="font-medium truncate">{s.full_name}</p>
+                      <p className="text-sm text-grey-medium mt-0.5 truncate">{s.email}</p>
                     </div>
-                  </td>
-                </tr>
+                    <span className="text-xs font-medium px-2.5 py-1 rounded-full bg-cream-soft capitalize shrink-0">
+                      {s.status}
+                    </span>
+                  </div>
+                  <p className="text-xs text-grey-medium mt-3">Batch: {s.batch?.name || 'Not assigned'}</p>
+                  <div className="flex items-center gap-4 mt-4 pt-3 border-t border-cream-light">
+                    <button onClick={() => openEdit(s)} className="focus-ring flex items-center gap-1.5 text-sm text-grey-medium hover:text-charcoal-deep">
+                      <Pencil size={14} /> Edit
+                    </button>
+                    <button onClick={() => handleDelete(s)} className="focus-ring flex items-center gap-1.5 text-sm text-grey-medium hover:text-red-600">
+                      <Trash2 size={14} /> Delete
+                    </button>
+                  </div>
+                </div>
               ))}
-            </tbody>
-          </table>
+            </div>
+          </>
         )}
       </div>
 

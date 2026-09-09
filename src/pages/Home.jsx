@@ -100,7 +100,6 @@ export default function Home() {
             name="General Culinary Class"
             price="₦250,000"
             duration="2 Weeks"
-            popular
             compact
             features={[]}
             ctaHref="/classes"
