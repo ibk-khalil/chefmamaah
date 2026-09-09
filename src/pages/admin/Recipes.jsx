@@ -185,14 +185,17 @@ export default function Recipes() {
         </Button>
       </div>
 
-      <div className="mt-8 bg-white rounded-lg border border-cream-light overflow-x-auto">
+      <div className="mt-8">
         {loading ? (
-          <p className="p-6 text-sm text-grey-medium">Loading...</p>
+          <p className="p-6 text-sm text-grey-medium bg-white rounded-lg border border-cream-light">Loading...</p>
         ) : error ? (
-          <p className="p-6 text-sm text-red-600">{error}</p>
+          <p className="p-6 text-sm text-red-600 bg-white rounded-lg border border-cream-light">{error}</p>
         ) : recipes.length === 0 ? (
-          <p className="p-6 text-sm text-grey-medium">No recipes created yet.</p>
+          <p className="p-6 text-sm text-grey-medium bg-white rounded-lg border border-cream-light">No recipes created yet.</p>
         ) : (
+          <>
+          {/* Desktop table */}
+          <div className="hidden md:block bg-white rounded-lg border border-cream-light overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
               <tr className="text-left text-grey-medium border-b border-cream-light">
@@ -230,6 +233,37 @@ export default function Recipes() {
               ))}
             </tbody>
           </table>
+          </div>
+
+          {/* Mobile stacked cards — no horizontal scrolling */}
+          <div className="md:hidden space-y-3">
+            {recipes.map((r) => (
+              <div key={r.id} className="bg-white rounded-lg border border-cream-light p-4">
+                <div className="flex items-start justify-between gap-3">
+                  <div className="min-w-0">
+                    <p className="font-medium truncate">{r.name}</p>
+                    <p className="text-sm text-grey-medium mt-0.5">{r.category}</p>
+                  </div>
+                  <span
+                    className={`text-xs font-medium px-2.5 py-1 rounded-full capitalize shrink-0 ${
+                      r.status === 'published' ? 'bg-green-100 text-green-700' : 'bg-cream-light text-charcoal-text'
+                    }`}
+                  >
+                    {r.status}
+                  </span>
+                </div>
+                <div className="flex items-center gap-4 mt-4 pt-3 border-t border-cream-light">
+                  <button onClick={() => openEdit(r)} className="focus-ring flex items-center gap-1.5 text-sm text-grey-medium hover:text-charcoal-deep">
+                    <Pencil size={14} /> Edit
+                  </button>
+                  <button onClick={() => handleDelete(r)} className="focus-ring flex items-center gap-1.5 text-sm text-grey-medium hover:text-red-600">
+                    <Trash2 size={14} /> Delete
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+          </>
         )}
       </div>
 
