@@ -4,11 +4,11 @@ import { waLink, WA_MESSAGES } from '../lib/whatsapp.js'
 
 const STORY_PARAGRAPHS = [
   "FoodWorld began with a simple passion for cooking and a desire to create meaningful experiences through food.",
-  "My name is Mrs. Maryam Bello, a professionally trained chef, culinary coach, and passionate food enthusiast. I have always been fascinated by the art of cooking — from experimenting with recipes and exploring different cuisines to teaching others and helping them discover their own creativity in the culinary world.",
+  "My name is Mrs. Maryam Bello, a professionally trained chef, culinary coach, and passionate food enthusiast. I have always been fascinated by the art of cooking from experimenting with recipes and exploring different cuisines to teaching others and helping them discover their own creativity in the culinary world.",
   "What started as a personal passion around 2020 has grown into a journey that continues to inspire and excite me every day.",
   "After completing my culinary training, I took the next step in my journey by creating The Global Palate in 2025, bringing together my love for diverse flavours, culinary creativity, and professional cooking. Since then, the journey has been incredibly rewarding, and I am grateful for every person who has been part of it.",
   "Today, FoodWorld represents more than just food. It is a platform built around culinary education, creativity, passion, and growth. Through our work, we aim to inspire people to explore the culinary world, develop their skills, and appreciate the beauty and diversity of food.",
-  "As we look ahead, we are excited to take an even bigger step — expanding our vision, reaching more people, and creating greater opportunities within the culinary space.",
+  "As we look ahead, we are excited to take an even bigger step expanding our vision, reaching more people, and creating greater opportunities within the culinary space.",
   "This is only the beginning.",
 ]
 

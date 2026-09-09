@@ -135,17 +135,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* TESTIMONIALS */}
-      <section className="max-w-content mx-auto px-5 md:px-8 py-20 md:py-28">
-        <h2 className="text-3xl md:text-4xl font-bold text-center max-w-xl mx-auto">
-          What Our Customers Say
-        </h2>
-        <div className="mt-14 grid md:grid-cols-2 gap-6">
-          {TESTIMONIALS.map((t) => (
-            <TestimonialCard key={t} quote={t} />
-          ))}
-        </div>
-      </section>
+
 
       {/* GALLERY PREVIEW */}
       <section className="bg-cream-soft py-20 md:py-28">

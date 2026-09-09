@@ -11,12 +11,22 @@ const ITEMS = [
   { id: 5, src: '/images/gallery/dish-05.jpeg', alt: 'Freshly baked sesame-seed bagels' },
   { id: 6, src: '/images/gallery/behind-scenes-01.jpeg', alt: 'Blueberry streusel muffins fresh out of the oven' },
   { id: 7, src: '/images/gallery/behind-scenes-02.jpeg', alt: 'Jollof rice, garden salad, and grilled fish platter with a watermelon mocktail' },
-  { id: 8, src: '/images/gallery/behind-scenes-03.jpeg', alt: 'Sesame bread rolls fresh out of the oven' },
+  { id: 8, src: '/images/gallery/classes-flyer.png', alt: 'Sesame bread rolls fresh out of the oven' },
   { id: 9, src: '/images/gallery/class-session-01.png', alt: 'Golden sesame dinner rolls baked in a round pan' },
   { id: 10, src: '/images/gallery/class-session-02.jpeg', alt: 'Spiced rice with roast chicken, vegetable orzo, and a fruit dessert spread' },
   { id: 11, src: '/images/gallery/class-session-03.jpeg', alt: 'Herbed rice with garden salad and grilled beef suya skewers' },
   { id: 12, src: '/images/gallery/event-01.jpeg', alt: 'Global Palate 2-week culinary masterclass flyer, fees 250,000 naira' },
   { id: 13, src: '/images/gallery/event-02.jpeg', alt: 'Global Palate 1-week private culinary masterclass flyer, fees 400,000 naira' },
+  { id: 14, src: '/images/gallery/gallery-01.jpeg', alt: 'Global Palate 1-week private culinary masterclass flyer, fees 400,000 naira' },
+  { id: 15, src: '/images/gallery/gallery-02.jpeg', alt: 'Chicken jollof-style rice with sweetcorn, a beef stew with mashed potatoes, and a watermelon mocktail' },
+  { id: 16, src: '/images/gallery/gallery-03.jpeg', alt: 'Sesame bread rolls served with efo and ogbono stew' },
+  { id: 17, src: '/images/gallery/gallery-04.jpeg', alt: 'Orzo pasta salad and a Caesar salad with croutons and shaved parmesan' },
+  { id: 18, src: '/images/gallery/gallery-05.jpeg', alt: 'Pan-seared meat in pepper sauce with mashed potatoes and sliced avocado' },
+  { id: 19, src: '/images/gallery/gallery-06.jpeg', alt: 'Freshly baked sesame-seed bagels' },
+  { id: 20, src: '/images/gallery/gallery-07.jpeg', alt: 'Blueberry streusel muffins fresh out of the oven' },
+  { id: 21, src: '/images/gallery/gallery-08.jpeg', alt: 'Jollof rice, garden salad, and grilled fish platter with a watermelon mocktail' },
+  { id: 22, src: '/images/gallery/gallery-09.jpeg', alt: 'Sesame bread rolls fresh out of the oven' },
+  { id: 23, src: '/images/gallery/gallery-10.jpeg', alt: 'Golden sesame dinner rolls baked in a round pan' },
 ]
 
 export default function Gallery() {
@@ -150,8 +160,6 @@ export default function Gallery() {
               <ChevronRight size={28} />
             </button>
           </div>
-
-          <p className="text-center text-white/70 text-sm px-6 pb-8 max-w-2xl mx-auto">{current.alt}</p>
         </div>
       )}
     </>

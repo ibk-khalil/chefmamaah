@@ -53,7 +53,8 @@ export default function Navbar() {
             variant="secondary"
             size="sm"
             icon
-            className="!border-white !text-white hover:!bg-white/10"
+            className="!bg-transparent !border-white !text-white hover:!bg-white/10"
+
           >
             Chat on WhatsApp
           </Button>
