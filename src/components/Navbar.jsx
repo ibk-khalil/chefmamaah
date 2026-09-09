@@ -21,9 +21,9 @@ export default function Navbar() {
 
   return (
     <>
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-cream-light">
+    <header className="sticky top-0 z-50 bg-charcoal-deep/95 backdrop-blur border-b border-white/10">
       <div className="max-w-content mx-auto flex items-center justify-between px-5 md:px-8 h-16 md:h-20"> 
-        <NavLink to="/" className="flex items-center gap-2 font-heading font-bold text-lg text-charcoal-deep">
+        <NavLink to="/" className="flex items-center gap-2 font-heading font-bold text-lg text-white">
           <img src="/images/logo.png" alt="FoodWorld" className="h-8 w-auto" />
           <span className="hidden sm:inline text-xs font-body font-normal text-grey-medium">by Chef Maamah</span>
         </NavLink>
@@ -35,7 +35,7 @@ export default function Navbar() {
               to={link.to}
               className={({ isActive }) =>
                 `text-sm font-medium transition-colors ${
-                  isActive ? 'text-charcoal-deep' : 'text-grey-medium hover:text-charcoal-deep'
+                  isActive ? 'text-white' : 'text-grey-medium hover:text-white'
                 }`
               }
             >
@@ -53,13 +53,14 @@ export default function Navbar() {
             variant="secondary"
             size="sm"
             icon
+            className="!border-white !text-white hover:!bg-white/10"
           >
             Chat on WhatsApp
           </Button>
         </div>
 
         <button
-          className="lg:hidden focus-ring rounded p-2"
+          className="lg:hidden focus-ring rounded p-2 text-white"
           aria-label={open ? 'Close menu' : 'Open menu'}
           onClick={() => setOpen((v) => !v)}
         >
@@ -69,15 +70,15 @@ export default function Navbar() {
     </header>
 
       {open && (
-        <div className="lg:hidden fixed inset-0 top-16 bg-white z-[60] flex flex-col px-6 py-8 gap-1 shadow-lg border-t border-cream-light overflow-y-auto">
+        <div className="lg:hidden fixed inset-0 top-16 bg-charcoal-deep z-[60] flex flex-col px-6 py-8 gap-1 shadow-lg border-t border-white/10 overflow-y-auto">
           {LINKS.map((link) => (
             <NavLink
               key={link.to}
               to={link.to}
               onClick={() => setOpen(false)}
               className={({ isActive }) =>
-                `text-lg font-heading font-semibold py-3 border-b border-cream-light ${
-                  isActive ? 'text-champagne' : 'text-charcoal-deep'
+                `text-lg font-heading font-semibold py-3 border-b border-white/10 ${
+                  isActive ? 'text-champagne' : 'text-white'
                 }`
               }
             >
@@ -91,7 +92,7 @@ export default function Navbar() {
             rel="noopener noreferrer"
             variant="primary"
             icon
-            className="mt-4 w-full"
+            className="mt-4 w-full !bg-white !text-charcoal-deep hover:!bg-cream-soft"
           >
             Chat on WhatsApp
           </Button>
@@ -100,3 +101,4 @@ export default function Navbar() {
     </>
   )
 }
+
