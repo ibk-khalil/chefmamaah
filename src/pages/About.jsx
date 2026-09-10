@@ -50,7 +50,7 @@ export default function About() {
           <div className="bg-white rounded-lg p-8 border border-cream-light">
             <h3 className="font-heading font-semibold text-xl">Our Vision</h3>
             <p className="mt-4 text-charcoal-text/80 leading-relaxed">
-              To grow FoodWorld into a platform that reaches more aspiring cooks across Nigeria,
+              To grow FoodWorld into a platform that reaches more aspiring cooks across Africa at large,
               creating greater opportunities within the culinary space.
             </p>
           </div>
